@@ -1,8 +1,9 @@
 import sys
 import re
+import glob
 
 with open("input.tex", "w+") as outfile:
-    for filename in [f"ch{i}.txt" for i in range(1,13)]:
+    for filename in glob.glob("*.txt"):
         with open(filename, "r") as infile:
             whole_input = infile.read()
             for card in whole_input.split("~~:~~"):
